@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-diff-explainer-cli"
+version = "0.1.0"
+description = "Offline diff viewer with optional plain-English explanation via any OpenAI-compatible endpoint (default: Ollama)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["diff", "compare", "ollama", "llm", "plain-english"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://dylanasdale.github.io"
+
+[project.scripts]
+lldiff = "llm_diff_explainer.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["llm_diff_explainer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
